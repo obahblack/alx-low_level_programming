@@ -9,12 +9,13 @@
  */
 int main(void)
 {
-	int low = "a";
+	int low = 'a';
 
-	while (low <= "z")
+	while (low <= 'z')
 	{
 		putchar(low);
 		low++;
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
+}
