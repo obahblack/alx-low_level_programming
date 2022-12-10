@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 /**
- * main = Entry point to generate a random number
+ * main - Entry point to generate a random number
+ *
  * Description - prints if random generated number is +tive, zero or -tive
  * Return: Always 0 (Success)
 */
