@@ -3,8 +3,8 @@
 #include <stdio.h>
 /* more headers goes there */
 /**
- * main - Entry point 
- * Return: Always 0 (Success)
+ * main - Entry point
+ * Return: Alway 0 (success)
  */
 /* betty style doc for function main goes there */
 int main(void)
