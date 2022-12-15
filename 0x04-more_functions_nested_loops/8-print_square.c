@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * print_square - function thaqt prints a square
+ * print_square - function that prints a square
  * @size: size of the square
- * Return: square made '#'
+ * Return: square made of '#'
  */
 void print_square(int size)
 {
@@ -22,7 +22,7 @@ void print_square(int size)
 			{
 				_putchar('#');
 			}
-			_putchar('\n')
+			_putchar('\n');
 		}
 	}
 }
