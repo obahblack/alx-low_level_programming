@@ -2,7 +2,7 @@
 /**
  * print_square - function thaqt prints a square
  * @size: size of the square
- * Return: square  #
+ * Return: square made '#'
  */
 void print_square(int size)
 {
