@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * print_chessboard - prints a chessboard
  * @a: array of pointers
@@ -16,6 +15,6 @@ void print_chessboard(char (*a)[8])
 		{
 			_putchar(a[i][j]);
 		}
-		_putchar(10)
+		_putchar(10);
 	}
 }
