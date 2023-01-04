@@ -1,5 +1,4 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
  * factorial - returns factorial
  * @n: number to be checked
