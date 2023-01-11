@@ -30,6 +30,11 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	copy = malloc(_strlen(str) * sizeof(char) + 1);
+	if (copy == NULL)
+	{
+		 printf("Can't allocate");
+		 return(NULL);
+	}
 
 	for (i = 0; i <= _strlen(str); i++)
 	{
