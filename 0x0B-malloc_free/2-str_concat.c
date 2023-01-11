@@ -44,6 +44,7 @@ char *str_concat(char *s1, char *s2)
 	space = malloc(length * sizeof(char));
 	if (space == NULL)
 	{
+		printf("can't allocate");
 		return (1);
 	}
 	for (i = 0; i < lens1; i++)
