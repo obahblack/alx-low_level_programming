@@ -42,6 +42,10 @@ char *str_concat(char *s1, char *s2)
 	length = lens1 + lens2;
 	lens2++;
 	space = malloc(length * sizeof(char));
+	if (space == NULL)
+	{
+		return (1);
+	}
 	for (i = 0; i < lens1; i++)
 	{
 		space[i] = s1[i];
