@@ -1,10 +1,12 @@
-#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "3-calc.h"
+
 /**
- * op_add - sums up
- * @a: 1st int
- * @b: 2nd int
+ * op_add - add two integers
+ * @a: integer to add
+ * @b: next integer to add
  * Return: sum
  */
 int op_add(int a, int b)
@@ -14,66 +16,69 @@ int op_add(int a, int b)
 	sum = a + b;
 	return (sum);
 }
+
 /**
- * op_sub - substracts one num from another
- * @a: 1st num
- * @b: 2nd num
- * Return: differnce
+ * op_sub - subtract two integers
+ * @a: integer to subtract from
+ * @b: next integer to subtract
+ * Return: difference
  */
 int op_sub(int a, int b)
 {
-	int sub;
+	int diff;
 
-	sub = a - b;
-	return (sub);
+	diff = a - b;
+	return (diff);
 }
+
 /**
- * ob_mul - multiplies
- * @a: 1st num
- * @b: 2nd num
- * Return: Multiplicatio
+ * op_mul - multiply two integers
+ * @a: integer to multiply
+ * @b: next integer to multiply
+ * Return: product of the two int arguments
  */
 int op_mul(int a, int b)
 {
-	int mul;
+	int prod;
 
-	mul = a * b;
-	return (mul);
+	prod = a * b;
+	return (prod);
 }
+
 /**
- * op_div - divides
- * @a: 1st num
- * @b: 2nd num
- * Return: division
+ * op_div - divide two integers
+ * @a: first integer to divide
+ * @b: second integer to divide
+ * Return: result of division of two integers
  */
 int op_div(int a, int b)
 {
-	int div;
+	int result;
 
-	if (b == 0)
+	if (a == 0 || b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	div = (a / b);
-	return (div);
+	result = a / b;
+	return (result);
 }
+
 /**
- * op_mod - get remainder
- * @a: 1st n
- * @b: 2nd n
- * Return: result
+ * op_mod - modulo two integers
+ * @a: first integer to mod
+ * @b: second integer to mod
+ * Return: result of modularized numbers
  */
 int op_mod(int a, int b)
 {
-	int mod;
+	int remainder;
 
-	if (b == 0)
+	if (a == 0 || b == 0)
 	{
 		printf("Error\n");
-		exist(100);
+		exit(100);
 	}
-	mod = (a % b);
-	return (mod);
+	remainder = a % b;
+	return (remainder);
 }

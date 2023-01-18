@@ -1,24 +1,25 @@
 #include <stdio.h>
-#include <string.h>
-#include "3-calc.h"
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include "3-calc.h"
+
 /**
- * main - prints the result of math operations
- * @argc: number of arguments passed
- * @argv: arguments passed
- * Return: result
+ * main - prints result of operator problem
+ * @argc: number of inputs
+ * @argv: input strings
+ * Return: zero
  */
 int main(int argc, char *argv[])
 {
-	int result;
+	int k;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
-
-	result = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
-	printf("%d\n", result);
+	k = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
+	printf("%d\n", k);
 	return (0);
 }

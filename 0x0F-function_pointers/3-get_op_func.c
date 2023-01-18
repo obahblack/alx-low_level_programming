@@ -1,15 +1,16 @@
-#include "3-calc.h"
 #include <stdio.h>
-#include <stdlib>
 #include <string.h>
+#include <stdlib.h>
+#include "3-calc.h"
+
 /**
- * get_op_func - selects the correct function to perform
- * @s: operator passed
- * Return: pointer to a func that perform the calc
+ * get_op_func - returns structures fields
+ * @s: operator character
+ * Return: corresponding function that matches operator character
  */
 int (*get_op_func(char *s))(int, int)
 {
-	op_t ops[] ={
+	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
@@ -22,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 	i = 0;
 	while (i < 5)
 	{
-		if (strcmp(ops[i].op, s) == 0 && *(s + 1) == '\0')
+		if (strcmp(s, ops[i].op) == 0)
 		{
 			return (ops[i].f);
 		}
