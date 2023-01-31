@@ -1,5 +1,6 @@
 #include "lists.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * free_listint2 - free nodes and set head to NULL
  * @head: head node
