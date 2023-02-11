@@ -3,8 +3,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 /**
  * create_file - a function that creates a file
  * @filename: is the name of the file to be created
