@@ -6,52 +6,26 @@
 #include <unistd.h>
 #include <stdlib.h>
 /**
- * read_textfile - reads textfile and prints content
- * @filename: name of file to retrieve content
- * @letters: number of characters to be printed
- * Return: number of written characters
+ * read_textfile - reads texfile and prints it to POSIX stdout
+ * @letters: number of letters to be read
+ * @filename: pointer to a file with text
+ * Return: number of letters read
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	int bytes_read, bytes_written;
+	char *buf;
+	int letters_read;
+	int letters_written;
 
-	if (filename == NULL)
+	buf = malloc(sizeof(char) * letters);
+	fd = open(filename, O_RDONLY);
+
+	if (buf == NULL)
 	{
 		return (0);
 	}
-
-	fd = open(filenamme, O_RDONLY);
 	if (fd == -1)
 	{
 		return (0);
-	}
 
-	char *buf = malloc(letters);
-
-	if (!buf)
-	{
-		close(fd);
-		return (0);
-	}
-
-	bytes_read = read(fd, buf, letters);
-	if (bytes_read == -1)
-	{
-		close(fd);
-		free(buf);
-		return (0);
-	}
-
-	bytes_written = write(STDOUT_FILEEND, buf, bytes_read);
-	if (bytes_written == -1 || bytes_written != bytes_read)
-	{
-		close(fd);
-		free(buf);
-		return (0);
-	}
-
-	close(fd);
-	free(buf);
-	return (bytes_written);
-}
