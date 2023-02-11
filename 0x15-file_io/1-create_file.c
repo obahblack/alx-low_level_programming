@@ -6,22 +6,37 @@
 #include <stdlib.h>
 #include <unistd.h>
 /**
- * create_file - a function that creates a file
- * @filename: is the name of the file to be created
- * @text_content: is the string to be written to the file
- * Return: 1 on sucess, -1 on failure
+ * _strlen - finds string length
+ * @s: a string
+ * Return: string length
  */
-int create_file(const char *filename, char *text_content);
+int _strlen(char *s)
+{
+	int length;
+
+	length = 0;
+	while (s[length] != '\0')
+		length++;
+	return (length);
+}
+/**
+ * create_file - creates a file
+ * @filename: pointer to the file to be created
+ * @text_content: terminated string to write to the file
+ * Return: 1 on success, -1 on failure
+ */
+int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t bytes_written;
+	int write_to_file;
+	int length;
 
 	if (filename == NULL)
 	{
 		return (-1);
 	}
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 
-	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 	{
 		return (-1);
@@ -33,13 +48,13 @@ int create_file(const char *filename, char *text_content);
 		return (1);
 	}
 
-	bytes_written = write(fd, text_content, _strlen(text_content));
-	if (bytes_written == -1 || bytes_written != _strlen(text_content))
+	length = _strlen(text_content);
+	write_to_file = write(fd, text_content, length);
+	if (write_to_file == -1)
 	{
 		close(fd);
 		return (-1);
 	}
-
 	close(fd);
 	return (1);
 }
