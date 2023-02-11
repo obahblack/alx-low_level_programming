@@ -1,10 +1,10 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdlib.h>
+#include <unistd.h>
 /**
  * _strlen - finds string length
  * @s: a string
@@ -23,7 +23,7 @@ int _strlen(char *s)
 /**
  * append_text_to_file - appends text to the end of a file
  * @filename: name of the file
- * @text_content: text to append to the end of the file
+ * @text_content: text to append to the end oOOAAOAf the file
  * Return: 1 on success, -1 on failure
  */
 int append_text_to_file(const char *filename, char *text_content)
@@ -37,7 +37,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	fd = open(filename, O_APPEND | O_WRONLY);
+	fd = open(filename, O_APPEND | O_RDWR);
 	if (fd == -1)
 	{
 		return (-1);
