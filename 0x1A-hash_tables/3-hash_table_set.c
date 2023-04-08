@@ -25,6 +25,14 @@ int create_and_add_node(hash_table_t *ht, const char *key, const char *value, un
 		return (0);
 	}
 
+	v = strdup(value);
+	if (!v)
+	{
+		free(k);
+		free(node);
+		return (0);
+	}
+
 	node->key = k;
 	node->value = v;
 
