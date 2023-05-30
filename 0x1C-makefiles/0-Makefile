@@ -1,2 +1,2 @@
 all: m.h main.c alx.c
-	gcc main.c alx.c -o alx
+	gcc main.c alx.c -o school

@@ -1,0 +1,5 @@
+CC = gcc
+SRC = main.c alx.c
+
+all: $(SRC:.c=.o)
+	$(CC) $(SRC:.c=.o) -o school
