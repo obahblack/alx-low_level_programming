@@ -3,5 +3,13 @@ SRC = main.c alx.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 
-all: m.h $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	$(CC) -c $<
+
+all: $(NAME)
+
+clean:
+	rm -f $(OBJ) $(NAME)
