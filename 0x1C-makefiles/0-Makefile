@@ -1,0 +1,7 @@
+all: alx
+
+alx: main.c alx.c
+	gcc main.c alx.c -o alx
+
+clean:
+	rm -f alx
